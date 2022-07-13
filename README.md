@@ -1,2 +1,2 @@
-# discord-telegram-sender-bot
-Promgram that forwards messages from Discord to Telegram 
+# Discord-to-Telegram
+Program that forwards messages from Discord to Telegram. Uses Discord.Net, Telegram.Bot, Telegram.Extensions.Polling packages
