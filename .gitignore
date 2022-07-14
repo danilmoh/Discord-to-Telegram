@@ -35,3 +35,9 @@ msbuild.wrn
 
 # Visual Studio 2015
 .vs/
+
+# Bot tokens
+*BotToken.txt
+
+# Chat IDs
+chats.json
