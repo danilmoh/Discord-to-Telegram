@@ -1,0 +1,74 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/danil/Projects/RiderProjects/Discord-To-Telegram/Discord-To-Telegram-Program/Discord-To-Telegram-Program.csproj": {}
+  },
+  "projects": {
+    "/home/danil/Projects/RiderProjects/Discord-To-Telegram/Discord-To-Telegram-Program/Discord-To-Telegram-Program.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/danil/Projects/RiderProjects/Discord-To-Telegram/Discord-To-Telegram-Program/Discord-To-Telegram-Program.csproj",
+        "projectName": "Discord-To-Telegram-Program",
+        "projectPath": "/home/danil/Projects/RiderProjects/Discord-To-Telegram/Discord-To-Telegram-Program/Discord-To-Telegram-Program.csproj",
+        "packagesPath": "/home/danil/.nuget/packages/",
+        "outputPath": "/home/danil/Projects/RiderProjects/Discord-To-Telegram/Discord-To-Telegram-Program/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/danil/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Discord.Net": {
+              "target": "Package",
+              "version": "[3.7.2, )"
+            },
+            "Telegram.Bot": {
+              "target": "Package",
+              "version": "[18.0.0, )"
+            },
+            "xunit.abstractions": {
+              "target": "Package",
+              "version": "[2.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/6.0.107/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
