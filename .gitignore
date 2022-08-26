@@ -46,3 +46,6 @@ net6.0/
 
 # Chat IDs
 chats.json
+
+# Saved Chats
+CurrentChats/
