@@ -1,4 +1,5 @@
 using Xunit;
+using Xunit.Abstractions;
 using DiscordToTelegram.Data.Services;
 using DiscordToTelegram.Data.Models;
 using DiscordToTelegram.Exceptions;
@@ -10,27 +11,44 @@ namespace Test.DataServices;
 
 public class ForwardOptionReaderTests
 {
-    private const string ProjectPath = "/home/danil/Projects/RiderProjects/Discord-To-Telegram";
-    private const string InputsPath = ProjectPath + "/Test/DataServices/ForwardOptionReaderInputs/";
 
-    private const string NoInputFileName = "Save_NoInput_ThrowsEmptyInputException";
-    [Theory]
-    [InlineData($"{InputsPath}{NoInputFileName}1.txt")]
-    [InlineData($"{InputsPath}{NoInputFileName}2.txt")]
-    public void Save_NoInput_ThrowsEmptyInputException(string inputFilePath)
+    private readonly ITestOutputHelper output;
+    private readonly string currentDirectory;
+    private readonly string inputsPath;
+
+
+    public ForwardOptionReaderTests(ITestOutputHelper output)
     {
-        Assert.Throws<EmptyInputException>(() => ForwardOptionReader.Read(inputFilePath));
+        this.output = output;
+        currentDirectory = Directory.GetCurrentDirectory();
+        inputsPath = currentDirectory + "/DataServices/ForwardOptionReaderInputs/"; ;
+
     }
 
-    private const string WrongInputFileName = "Save_WrongInput_ThrowsWrongInputException";
-    [Theory]
-    [InlineData($"{InputsPath}{WrongInputFileName}1.txt")]
-    [InlineData($"{InputsPath}{WrongInputFileName}2.txt")]
-    [InlineData($"{InputsPath}{WrongInputFileName}3.txt")]
-    [InlineData($"{InputsPath}{WrongInputFileName}4.txt")]
-    public void Save_WrongInput_ThrowsWrongInputException(string inputFilePath)
+    [Fact]
+    public void Save_NoInput_ThrowsEmptyInputException()
     {
-        Assert.Throws<WrongInputException>(() => ForwardOptionReader.Read(inputFilePath));
+        var fileNameNoInput = "Save_NoInput_ThrowsEmptyInputException";
+        for (int i = 1; i <= 2; i++)
+        {
+            var inputFilePath = $"{inputsPath}{fileNameNoInput}{i}.txt";
+            Assert.Throws<EmptyInputException>(() => ForwardOptionReader.Read(inputFilePath));
+        }
+
+    }
+
+
+    [Fact]
+    public void Save_WrongInput_ThrowsWrongInputException()
+    {
+
+        var fileNameWrongInput = "Save_WrongInput_ThrowsWrongInputException";
+        for (int i = 1; i <= 4; i++)
+        {
+            var inputFilePath = $"{inputsPath}{fileNameWrongInput}{i}.txt";
+            Assert.Throws<WrongInputException>(() => ForwardOptionReader.Read(inputFilePath));
+
+        }
     }
 
     [Fact]
@@ -40,13 +58,12 @@ public class ForwardOptionReaderTests
         Assert.Throws<FileNotFoundException>(() => ForwardOptionReader.Read(path));
     }
 
-    private const string ExampleInputDataPath = $"{InputsPath}Save_InputDataFromSpecifiedPath_ReturnsCorrectList.txt";
     [Fact]
     public void Save_InputDataFromSpecifiedPath_ReturnsCorrectList()
     {
         var expectedOutput = GetExampleForwardOptions();
 
-        var path = ExampleInputDataPath;
+        var path = $"{inputsPath}Save_InputDataFromSpecifiedPath_ReturnsCorrectList.txt";
 
         var resultOutput = ForwardOptionReader.Read(path);
 

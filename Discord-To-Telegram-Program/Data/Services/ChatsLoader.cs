@@ -38,7 +38,7 @@ public class ChatsLoader
 
             return output;
         }
-        catch (Exception e)
+        catch (Exception)
         {
             throw new WrongInputException("Wrong input provided to ChatsLoader");
         }

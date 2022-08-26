@@ -8,17 +8,13 @@ using System.Collections.Generic;
 using System.Text.Json;
 using Xunit.Abstractions;
 
+namespace Test.DataServices;
+
 public class ChatsLoaderTests
 {
     private readonly ITestOutputHelper output;
 
-    private readonly string ProjectDirectory =
-        Directory.GetParent(
-            Directory.GetCurrentDirectory()
-        ).Parent.Parent.ToString() + "/";
-
-    private const string DiscordChatsPath = "/home/danil/Projects/RiderProjects/Discord-To-Telegram/Discord-To-Telegram-Program/LocalData/DiscordChats.json";
-    private const string TelegramChatsPath = "/home/danil/Projects/RiderProjects/Discord-To-Telegram/Discord-To-Telegram-Program/LocalData/TelegramChats.json";
+    private readonly string currentDirectory = Directory.GetCurrentDirectory().ToString() + "/";
 
     public ChatsLoaderTests(ITestOutputHelper output)
     {
@@ -28,6 +24,8 @@ public class ChatsLoaderTests
     [Fact]
     public void Load_NonExistingPath_ThrowsFileNotFoundException()
     {
+        output.WriteLine(Directory.GetCurrentDirectory());
+
         var nonExistingFile = "/home/hello.json";
 
         Action outputAction = () => ChatsLoader.Load(nonExistingFile);
@@ -38,10 +36,10 @@ public class ChatsLoaderTests
     [Fact]
     public void Load_EmptyData_ReturnsEmptyList()
     {
-        this.output.WriteLine(ProjectDirectory);
+        this.output.WriteLine(currentDirectory);
 
         var emptyFilePath =
-            $"{ProjectDirectory}DataServices/ChatsLoaderChatsData/EmptyFile.json";
+            $"{currentDirectory}DataServices/ChatsLoaderChatsData/EmptyFile.json";
 
         var output = ChatsLoader.Load(emptyFilePath);
 
@@ -51,7 +49,7 @@ public class ChatsLoaderTests
     [Fact]
     public void Load_IncorrectData_ThrowsWrongInputException()
     {
-        var wrongDataFilepath = ProjectDirectory + "/DataServices/ChatsLoaderChatsData/WrongDataFile.json";
+        var wrongDataFilepath = currentDirectory + "/DataServices/ChatsLoaderChatsData/WrongDataFile.json";
 
         Action outputAction = () => ChatsLoader.Load(wrongDataFilepath);
 
@@ -61,7 +59,7 @@ public class ChatsLoaderTests
     [Fact]
     public void Load_CorrectDataFromPath_ReturnsCorrectData()
     {
-        var dataPath = "/home/danil/Projects/RiderProjects/Discord-To-Telegram/Test/DataServices/ChatsLoaderChatsData/CorrectData.json";
+        var dataPath = $"{currentDirectory}DataServices/ChatsLoaderChatsData/CorrectData.json";
         var expectedChats = new List<Chat>();
 
         // generating random chats

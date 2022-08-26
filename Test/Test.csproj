@@ -24,5 +24,64 @@
     <ProjectReference Include="..\Discord-To-Telegram-Program\Discord-To-Telegram-Program.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="DataServices/ChatsLoaderChatsData/CorrectData.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="DataServices/ChatsLoaderChatsData/EmptyFile.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="DataServices/ChatsLoaderChatsData/WrongDataFile.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="DataServices/ForwardOptionReaderInputs/Save_InputDataFromSpecifiedPath_ReturnsCorrectList.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="DataServices/ForwardOptionReaderInputs/Save_NoInput_ThrowsEmptyInputException1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="DataServices/ForwardOptionReaderInputs/Save_NoInput_ThrowsEmptyInputException2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="DataServices/ForwardOptionReaderInputs/Save_WrongInput_ThrowsWrongInputException1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="DataServices/ForwardOptionReaderInputs/Save_WrongInput_ThrowsWrongInputException2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="DataServices/ForwardOptionReaderInputs/Save_WrongInput_ThrowsWrongInputException3.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="DataServices/ForwardOptionReaderInputs/Save_WrongInput_ThrowsWrongInputException4.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 
 </Project>
