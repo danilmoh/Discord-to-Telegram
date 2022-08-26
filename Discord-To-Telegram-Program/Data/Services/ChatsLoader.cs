@@ -44,9 +44,9 @@ public class ChatsLoader
         }
     }
 
-    public static List<Chat> Load(ChatType type)
+    public static List<Chat> Load(BotType type)
     {
-        var chosenPath = (type == ChatType.Discord) ? DiscordChatsPath : TelegramChatsPath;
+        var chosenPath = (type == BotType.DISCORD) ? DiscordChatsPath : TelegramChatsPath;
 
         return Load(chosenPath);
     }

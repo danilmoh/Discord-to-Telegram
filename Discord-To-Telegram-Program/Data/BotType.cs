@@ -1,4 +1,4 @@
-namespace DiscordToTelegram.Bots;
+namespace DiscordToTelegram.Data;
 
 public enum BotType
 {
