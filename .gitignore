@@ -34,6 +34,7 @@ msbuild.err
 msbuild.wrn
 obj/
 bin/
+net6.0/
 
 # Visual Studio 2015
 .vs/
