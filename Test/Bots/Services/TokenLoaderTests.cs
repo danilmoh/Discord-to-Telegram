@@ -5,6 +5,8 @@ using DiscordToTelegram.Data;
 using DiscordToTelegram.Bots.Services;
 using DiscordToTelegram.Exceptions;
 
+namespace Test.Bots.Services;
+
 public class TokenLoaderTests
 {
     private readonly ITestOutputHelper output;
