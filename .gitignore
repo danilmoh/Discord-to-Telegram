@@ -35,6 +35,8 @@ msbuild.wrn
 obj/
 bin/
 net6.0/
+*.pdb
+*.dll
 
 # Visual Studio 2015
 .vs/
