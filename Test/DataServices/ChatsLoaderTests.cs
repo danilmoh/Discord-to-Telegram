@@ -60,21 +60,7 @@ public class ChatsLoaderTests
     public void Load_CorrectDataFromPath_ReturnsCorrectData()
     {
         var dataPath = $"{currentDirectory}DataServices/ChatsLoaderChatsData/CorrectData.json";
-        var expectedChats = new List<Chat>();
-
-        // generating random chats
-        for (int i = 0; i < 100; i++)
-        {
-            var random = new Random();
-
-            var positive = random.Next(0, 2) == 1;
-            var value = random.NextInt64();
-            var chatId = positive ? value : -1 * value;
-
-            var chatName = $";chat - -+ {i};";
-
-            expectedChats.Add(new Chat(chatId, chatName));
-        }
+        var expectedChats = RandomChatsGenerator.GenerateRandomChats();
         // saving chats to the file
         SaveChats(expectedChats, dataPath);
 

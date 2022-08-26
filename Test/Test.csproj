@@ -84,4 +84,23 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="DataServices/ChatsSaverChatsData/ProvidedChatsPath.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Bots/Services/TestCorrectToken.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Bots/Services/EmptyFile.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+
 </Project>
