@@ -2,8 +2,6 @@ using System.Text.Json.Serialization;
 
 namespace DiscordToTelegram.Data.Models;
 
-
-
 public class Chat
 {
     [JsonConstructor]
@@ -29,5 +27,10 @@ public class Chat
     public override int GetHashCode()
     {
         return this.Id.GetHashCode();
+    }
+
+    public override string ToString()
+    {
+        return (this.Name + ": " + this.Id);
     }
 }

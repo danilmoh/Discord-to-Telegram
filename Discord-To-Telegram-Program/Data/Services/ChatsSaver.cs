@@ -6,11 +6,9 @@ namespace DiscordToTelegram.Data.Services;
 
 public static class ChatsSaver
 {
-    private static readonly string s_telegramChatsPath =
-        Directory.GetCurrentDirectory() + "/CurrentChats/TelegramChats.json";
+    private static readonly string s_telegramChatsPath = DefaultPaths.TelegramChats;
 
-    private static readonly string s_discordChatsPath =
-        Directory.GetCurrentDirectory() + "/CurrentChats/DiscordChats.json";
+    private static readonly string s_discordChatsPath = DefaultPaths.DiscordChats;
 
     public static void Save(List<Chat> chats, BotType type)
     {

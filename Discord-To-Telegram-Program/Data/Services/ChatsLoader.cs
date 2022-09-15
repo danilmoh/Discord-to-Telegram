@@ -5,17 +5,10 @@ using Xunit.Abstractions;
 
 namespace DiscordToTelegram.Data.Services;
 
-public class ChatsLoader
+public static class ChatsLoader
 {
-    private readonly ITestOutputHelper output;
-
-    private const string DiscordChatsPath = "Discord-To-Telegram-Program/LocalData/DiscordChats.json";
-    private const string TelegramChatsPath = "Discord-To-Telegram-Program/LocalData/TelegramChats.json";
-
-    public ChatsLoader(ITestOutputHelper output)
-    {
-        this.output = output;
-    }
+    private static readonly string s_discordChatsPath = DefaultPaths.DiscordChats;
+    private static readonly string s_telegramChatsPath = DefaultPaths.TelegramChats;
 
     public static List<Chat> Load(string loadPath)
     {
@@ -46,7 +39,7 @@ public class ChatsLoader
 
     public static List<Chat> Load(BotType type)
     {
-        var chosenPath = (type == BotType.DISCORD) ? DiscordChatsPath : TelegramChatsPath;
+        var chosenPath = (type == BotType.DISCORD) ? s_discordChatsPath : s_telegramChatsPath;
 
         return Load(chosenPath);
     }

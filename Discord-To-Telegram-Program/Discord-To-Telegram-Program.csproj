@@ -38,4 +38,16 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="ForwardOptions.txt">  
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="CurrentChats/CurrentMessages.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

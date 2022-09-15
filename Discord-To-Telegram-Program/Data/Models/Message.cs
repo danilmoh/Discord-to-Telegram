@@ -6,6 +6,6 @@ public record Message
 
     public override int GetHashCode()
     {
-        return this.Id.GetHashCode() * ChatId.GetHashCode();
+        return Id.GetHashCode() * ChatId.GetHashCode();
     }
 }

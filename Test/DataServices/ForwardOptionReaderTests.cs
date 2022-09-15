@@ -21,7 +21,7 @@ public class ForwardOptionReaderTests
     {
         this.output = output;
         currentDirectory = Directory.GetCurrentDirectory();
-        inputsPath = currentDirectory + "/DataServices/ForwardOptionReaderInputs/"; ;
+        inputsPath = currentDirectory + "/DataServices/ForwardOptionReaderInputs/";
 
     }
 
@@ -132,7 +132,8 @@ public class ForwardOptionReaderTests
 
         foreach (var option in forwardOptions)
         {
-            var expectedOutput = new StringBuilder('(');
+            var expectedOutput = new StringBuilder();
+            expectedOutput.Append('(');
             expectedOutputs.Add(expectedOutput);
 
             for (int i = 0; i < option.Sources.Count; i++)

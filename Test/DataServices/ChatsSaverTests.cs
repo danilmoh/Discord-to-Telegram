@@ -11,7 +11,7 @@ using System;
 
 namespace Test.DataServices;
 
-public class ChatSaverTests
+public class ChatsSaverTests
 {
     private readonly ITestOutputHelper output;
 
@@ -20,7 +20,7 @@ public class ChatSaverTests
     private readonly string defaultTelegramChatsSavePath;
     private readonly string defaultDiscordChatsSavePath;
 
-    public ChatSaverTests(ITestOutputHelper output)
+    public ChatsSaverTests(ITestOutputHelper output)
     {
         this.output = output;
         currentDirectory = System.IO.Directory.GetCurrentDirectory();

@@ -11,7 +11,8 @@ public record ForwardOption
 
     public override string ToString()
     {
-        var resultString = new StringBuilder('(');
+        var resultString = new StringBuilder();
+        resultString.Append('(');
 
         for (int i = 0; i < this.Sources.Count; i++)
         {

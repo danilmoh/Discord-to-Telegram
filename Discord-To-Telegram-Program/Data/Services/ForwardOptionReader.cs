@@ -1,15 +1,14 @@
 using DiscordToTelegram.Data.Models;
 using DiscordToTelegram.Exceptions;
-using System.Linq;
 
 namespace DiscordToTelegram.Data.Services;
 public static class ForwardOptionReader
 {
 
-    private const string DefaultPath = "Discord-To-Telegram-Program/ForwardOptions.txt";
+    private static readonly string s_defaultPath = DefaultPaths.ForwardOptions;
     public static List<ForwardOption> Read()
     {
-        return Read(DefaultPath);
+        return Read(s_defaultPath);
     }
 
     public static List<ForwardOption> Read(string path)
@@ -23,7 +22,7 @@ public static class ForwardOptionReader
 
         if (new FileInfo(path).Length == 0 || string.IsNullOrWhiteSpace(content))
         {
-            throw new EmptyInputException("No input");
+            throw new EmptyInputException("No messagesinput");
         }
 
         var options = File.ReadAllLines(path);

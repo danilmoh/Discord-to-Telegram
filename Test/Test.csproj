@@ -102,5 +102,37 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Bots/Services/EmptyFile.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="DataServices/MessagesSaverMessagesData/Save_CorrectDataProvidedPath_SavesCorrectly.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+
+  <ItemGroup>
+      <None Update="DataServices/MessagesLoaderInputs/EmptyFile.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+  </ItemGroup>
+
+  <ItemGroup>
+      <None Update="DataServices/MessagesLoaderInputs/WrongData.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+  </ItemGroup>
+
+  <ItemGroup>
+      <None Update="DataServices/MessagesLoaderInputs/CorrectData.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+  </ItemGroup>
+   
+
 
 </Project>
