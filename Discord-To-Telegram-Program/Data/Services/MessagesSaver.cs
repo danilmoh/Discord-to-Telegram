@@ -1,11 +1,11 @@
 using DiscordToTelegram.Data.Models;
-using DiscordToTelegram.Data;
 using System.Text.Json;
 
 namespace DiscordToTelegram.Data.Services;
 
 public static class MessagesSaver
 {
+    private static readonly string s_defaultSavePath = DefaultPaths.Messages;
     public static void Save(Dictionary<KeyValuePair<Chat, Chat>, Dictionary<Message, Message>> messagesMap, string path)
     {
         if (!File.Exists(path))
@@ -18,8 +18,8 @@ public static class MessagesSaver
 
     public static void Save(Dictionary<KeyValuePair<Chat, Chat>, Dictionary<Message, Message>> messagesMap)
     {
-        var path = DefaultPaths.Messages;
-        Save(messagesMap, path);
+
+        Save(messagesMap, s_defaultSavePath);
     }
 
 

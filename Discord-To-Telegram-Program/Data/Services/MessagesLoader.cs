@@ -6,6 +6,7 @@ namespace DiscordToTelegram.Data.Services;
 
 public static class MessagesLoader
 {
+    private static readonly string s_defaultLoadPath = DefaultPaths.Messages;
     public static Dictionary<KeyValuePair<Chat, Chat>, Dictionary<Message, Message>> Load(string path)
     {
         if (!File.Exists(path))
@@ -37,6 +38,6 @@ public static class MessagesLoader
 
     public static Dictionary<KeyValuePair<Chat, Chat>, Dictionary<Message, Message>> Load()
     {
-        throw new NotImplementedException();
+        return Load(s_defaultLoadPath);
     }
 }

@@ -13,16 +13,14 @@ namespace DiscordToTelegram.Bots;
 
 public class TelegramBot
 {
-    private List<Data.Models.Chat> currentChats;
-    private Dictionary<KeyValuePair<Data.Models.Chat, Data.Models.Chat>, Dictionary<Data.Models.Message, Data.Models.Message>> messages;
+    private readonly List<Data.Models.Chat> currentChats;
+    private readonly Dictionary<KeyValuePair<Data.Models.Chat, Data.Models.Chat>, Dictionary<Data.Models.Message, Data.Models.Message>> messages;
     private TelegramBotClient client;
     private CancellationTokenSource cts;
     public TelegramBot()
     {
         currentChats = ChatsLoader.Load(Data.BotType.TELEGRAM);
-
-        messages = new Dictionary<KeyValuePair<Data.Models.Chat, Data.Models.Chat>,
-            Dictionary<Data.Models.Message, Data.Models.Message>>();
+        messages = MessagesLoader.Load();
     }
 
     public async Task StartAsync()
@@ -52,7 +50,13 @@ public class TelegramBot
     public void Stop()
     {
         cts.Cancel();
+        SaveEverything();
+    }
+
+    public void SaveEverything()
+    {
         ChatsSaver.Save(currentChats, Data.BotType.TELEGRAM);
+        MessagesSaver.Save(messages);
     }
 
     public async Task ForwardMessageAsync(string destinationChatName, Discord.WebSocket.SocketMessage message)
