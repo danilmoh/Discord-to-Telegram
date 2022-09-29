@@ -3,7 +3,7 @@ Program that forwards messages from Discord server channels to Telegram channels
 
 In order for the program to work, you need to:
 1. Add your Discord bot to the server with channels you want to forward
-2. Add your Telegram bot to the channels you where want to receive Discord messages
+2. Add your Telegram bot to the channels where you want to receive Discord messages
 3. Specify the Discord and Telegram bot tokens in the `Program/BotTokens/DiscordBotToken.txt` and `Program/BotTokens/TelegramBotToken.txt`
 5. Specify the names of the source and destination chats in in the `Program/ForwardOptions.txt` file the following way:
 
